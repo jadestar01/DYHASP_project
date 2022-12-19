@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public void LoadButton(string number)
+    {
+        SceneManager.LoadScene("Stage" + number);
+    }
 
     public void Stage01()
     {

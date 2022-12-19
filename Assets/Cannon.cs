@@ -26,7 +26,6 @@ public class Cannon : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(shotDelay);
             GameObject cannonball = Instantiate(cannonBall, shotPosition.position, Quaternion.identity);
             cannonball.GetComponent<CannonBall>().isLeft = isLeft;
             cannonball.GetComponent<CannonBall>().cannonBallSpeed = cannonBallSpeed;
@@ -38,6 +37,7 @@ public class Cannon : MonoBehaviour
 
 
             cannonball.GetComponent<CannonBall>().DestoryDelay(destroyDelay);
+            yield return new WaitForSeconds(shotDelay);
         }
     }
 }

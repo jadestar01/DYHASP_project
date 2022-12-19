@@ -22,14 +22,27 @@ public class GameManger : MonoBehaviour
 
     private void Update()
     {
-        health.text = "Health : " + player.Health.ToString();
-        coin.text = "Coin : " + player.coinCount.ToString();
+        health.text = "Health : " + player.Health.ToString() +"/"+ player.maxHealth.ToString();
+        coin.text = "Coin : " + player.coinCount.ToString() + "/" + player.maxCoin.ToString();
         time.text = "Time : " + currentTime.ToString();
 
         if (GameOverProcessor())
         {
             SceneManager.LoadScene("GameOver");
         }
+        if (GameWinProcessor())
+        {
+            SceneManager.LoadScene("GameWin");
+        }
+    }
+
+    public bool GameWinProcessor()
+    {
+        if (player.coinCount >= player.maxCoin)
+        {
+            return true;
+        }
+        return false;
     }
 
     public bool GameOverProcessor()

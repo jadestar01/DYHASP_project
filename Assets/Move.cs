@@ -6,8 +6,10 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    public int maxHealth = 3;
     public int Health = 3;
     public int saveHealth;
+    public int maxCoin;
     public int coinCount = 0;
     public Vector2 SavePoint;
 
